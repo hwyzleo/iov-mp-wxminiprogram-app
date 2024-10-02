@@ -1,0 +1,53 @@
+.banner-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    padding-left: 32rpx;
+    padding-bottom: 15rpx;
+    width: 100vw;
+}
+
+.banner-header .icon-back {
+    width: 40rpx;
+    height: 40rpx;
+    position: relative;
+    z-index: 1;
+}
+.banner-header .icon-back-new {
+    width: 56rpx;
+    height: 56rpx;
+    position: relative;
+    z-index: 1;
+}
+.banner-header .icon-home {
+    width: 33rpx;
+    height: 34rpx;
+    margin-left: 30rpx;
+}
+
+.banner-header .title {
+    position: absolute;
+    left: 0;
+    color: #ffffff;
+    font-size: 32rpx;
+    width: 100vw;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.banner-header .dark-title {
+    position: absolute;
+    left: 0;
+    color: #ffffff;
+    width: 100vw;
+    text-align: center;
+    font-size: 32rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #1A171B;
+    line-height: 45rpx;
+    box-sizing: border-box;
+}

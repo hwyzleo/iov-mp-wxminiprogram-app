@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@vant/weapp": "^1.11.6",
+    "lin-ui": "^0.9.12",
+    "miniprogram-api-promise": "^1.0.4",
+    "mp-html": "^2.4.0",
+    "wx-canvas-2d": "^2.4.5"
+  }
+}

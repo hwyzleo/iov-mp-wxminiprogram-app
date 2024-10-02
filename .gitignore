@@ -1,0 +1,21 @@
+### Mac OS ###
+.DS_Store
+
+# 依赖包
+node_modules/
+
+# 小程序 npm 构建
+miniprogram_npm/
+
+# 构建输出
+dist/
+
+# 日志文件
+*.log
+
+# 微信开发者工具本地配置文件
+project.private.config.json
+
+# 其他临时文件
+*.swp
+*.swo

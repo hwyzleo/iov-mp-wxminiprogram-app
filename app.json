@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/community/community",
+    "pages/service/service",
+    "pages/vehicle/vehicle",
+    "pages/mall/mall",
+    "pages/my/my",
+    "pages/my-setting/my-setting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#666666",
+    "selectedColor": "#222222",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/community/community",
+        "text": "探索",
+        "iconPath": "/images/icon_explore.png",
+        "selectedIconPath": "/images/icon_explore_fill.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "服务",
+        "iconPath": "/images/icon_service.png",
+        "selectedIconPath": "/images/icon_service_fill.png"
+      },
+      {
+        "pagePath": "pages/vehicle/vehicle",
+        "text": "爱车",
+        "iconPath": "/images/icon_vehicle.png",
+        "selectedIconPath": "/images/icon_vehicle_fill.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "商城",
+        "iconPath": "/images/icon_mall.png",
+        "selectedIconPath": "/images/icon_mall_fill.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/icon_person.png",
+        "selectedIconPath": "/images/icon_person_fill.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "将获取你的具体位置信息"
+    }
+  },
+  "requiredPrivateInfos":[
+    "getLocation"
+  ],
+  "usingComponents": {
+  }
+}

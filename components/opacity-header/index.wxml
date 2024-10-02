@@ -1,0 +1,28 @@
+<view wx:if="{{isOpacity}}" class="banner-header"
+      style="z-index: {{zIndex}};padding-top: {{ headerTop }}px;height: {{ headerHeight }}px;{{ backgroundStyle }}">
+	<block wx:if="{{isFromShare != 1 }}">
+		<image wx:if="{{!color && opacity<0.5}}" catch:tap="onBack" class="icon-back-new" src='{{useIcon ? backIconUrl : lightBackIcon}}' />
+		<image wx:else catch:tap="onBack" class="icon-back-new" src="{{useIcon ? backIconUrl : '../../images/icon_arrow_left.png'}}" />
+	</block>
+	<block wx:else>
+		<image wx:if="{{opacity<0.5}}" catch:tap="onHome" class="icon-back"
+		       src="{{useIcon ? homeIconUrl : '../../images/icon_explore.png'}}" />
+		<image wx:else catch:tap="onHome" class="icon-back"
+		       src="{{useIcon ? homeIconUrl : '../../images/icon_explore_fill.png'}}" />
+	</block>
+	<text wx:if="{{title}}" class="title" style="color: {{color || titleColor}}">{{title}}</text>
+</view>
+<view wx:else class="banner-header"
+      style="z-index: {{zIndex}};padding-top: {{ headerTop }}px;height: {{ headerHeight }}px;background: {{ background }}">
+	<block wx:if="{{isIcon}}">
+		<block wx:if="{{isFromShare != 1 }}">
+			<image class="icon-back-new" catch:tap="onBack" src="{{useIcon ? backIconUrl : '../../images/icon_arrow_left.png'}}" />
+		</block>
+		<block wx:else>
+			<image catch:tap="onHome" class="icon-back"
+			       src="{{useIcon ? homeIconUrl : '../../images/icon_explore.png'}}" />
+		</block>
+	</block>
+	<text wx:if="{{title}}" class="dark-title">{{title}}</text>
+</view>
+<view wx:if="{{isHeight}}" class="header-gap" style="padding-top: {{totalHeight}}rpx"></view>

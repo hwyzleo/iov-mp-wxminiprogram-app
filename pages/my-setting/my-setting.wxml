@@ -1,0 +1,7 @@
+<Header isOpacity="{{false}}" isHeight="{{true}}" title="设置"/>
+<view class="list" style="padding-bottom: {{footerHeight}}px">
+    <view class="list-version" catch:tap="userTerms">
+        <view class="list-item-title">版本</view>
+        <view class="list-item-version">{{version}}</view>
+    </view>
+</view>
