@@ -1,7 +1,18 @@
-<Header isOpacity="{{false}}" isHeight="{{true}}" title="设置"/>
+<Header isOpacity="{{false}}" isHeight="{{true}}" title="设置" />
 <view class="list" style="padding-bottom: {{footerHeight}}px">
-    <view class="list-version" catch:tap="userTerms">
-        <view class="list-item-title">版本</view>
-        <view class="list-item-version">{{version}}</view>
+  <view class="list-version" bindtap="onClickMock">
+    <view class="list-item-title">版本</view>
+    <view class="list-item-version">
+      {{version}}
+      <span wx:if="{{isMock}}">(Mock)</span>
     </view>
+  </view>
+  <view class="list-version" wx:if="{{showMock}}">
+    <view class="list-item-title">
+      <input type="text" style="width: 300px;" value="{{apiUrl}}" />
+    </view>
+  </view>
 </view>
+<block wx:if="{{isLogin}}">
+  <button class="logout-btn" bindtap="onClickLogout">退出登录</button>
+</block>

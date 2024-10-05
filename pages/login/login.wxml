@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<Header isOpacity="{{false}}" isHeight="{{true}}" isCatchEvent="{{true}}" bind:onBack="onBack" />
+<image class="logo"
+       src="../../images/app_icon.png"
+       mode="aspectFit"></image>
+<view class="content">
+	<view class="coverBgView">
+		<button class="loginBtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机号快捷登录</button>
+		<view hidden="{{agreePolicy}}" class="coverView" bindtap="showAlertMsg"></view>
+	</view>
+	<view class="policy">
+		<view class="img-container" bindtap="togglePolicyItem">
+			<image hidden="{{agreePolicy}}" class="policy-img" src="../../images/icon_circle.png" />
+			<image hidden="{{!agreePolicy}}" class="policy-img" src="../../images/icon_circle_check.png" />
+		</view>
+		<text class="policy-text-normal" bindtap="togglePolicyItem">我已阅读并同意</text>
+		<text class="policy-text">《用户协议》</text>
+		<text class="policy-text-normal">和</text>
+		<text class="policy-text" >《隐私政策》</text>
+	</view>
+</view>

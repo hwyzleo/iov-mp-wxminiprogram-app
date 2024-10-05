@@ -7,7 +7,8 @@ promisifyAll(wx, wxp)
 App({
   onLaunch() {},
   globalData: {
-    version: "0.0.1",
+    version: "0.0.2",
+    apiUrl: "http://192.168.2.223:8081",
     windowHeight: 0,
     statusBarHeight: 20,
     screenHeight: 0,

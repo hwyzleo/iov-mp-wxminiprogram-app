@@ -1,15 +1,31 @@
-<view class="top-view" id="top-view">
-  <view class="nav-bar" style="top:40px;">
-    <image class="nav-bar-setting" src="../../images/icon_setting.png" bindtap="onClickSettingIcon" customStyle="" />
-  </view>
-  <view class="not-login">
-    <view class="unlogin-view">
-      <view class="unlogin-text">
-        <text>Hi，</text>
-        <text>欢迎您的到来</text>
-      </view>
-      <image class="unlogin-avatar" src="../../images/my/my_place_holder.png" bindtap="onClickLogin"></image>
+<block wx:if="{{isLogin}}">
+  <view class="top-view" id="top-view">
+    <view class="nav-bar" style="top:40px;">
+      <image class="nav-bar-setting" src="../../images/icon_setting.png" bindtap="onClickSettingIcon" customStyle="" />
     </view>
-    <button class="unlogin-btn" bindtap="onClickLogin">登录 / 注册</button>
+    <view class="login-view">
+      <view class="login">
+        <text class="login-text">{{userInfo.nickname}}</text>
+        <button class="signin-btn">签到</button>
+      </view>
+      <image class="unlogin-avatar" src="{{userInfo.avatar}}" bindtap="onClickLogin"></image>
+    </view>
   </view>
-</view>
+</block>
+<block wx:else>
+  <view class="top-view" id="top-view">
+    <view class="nav-bar" style="top:40px;">
+      <image class="nav-bar-setting" src="../../images/icon_setting.png" bindtap="onClickSettingIcon" customStyle="" />
+    </view>
+    <view class="not-login">
+      <view class="unlogin-view">
+        <view class="unlogin-text">
+          <text>Hi，</text>
+          <text>欢迎您的到来</text>
+        </view>
+        <image class="unlogin-avatar" src="../../images/my/my_place_holder.png" bindtap="onClickLogin"></image>
+      </view>
+      <button class="unlogin-btn" bindtap="onClickLogin">登录 / 注册</button>
+    </view>
+  </view>
+</block>

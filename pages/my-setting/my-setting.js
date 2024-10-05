@@ -1,4 +1,7 @@
 // pages/my-setting/my-setting.js
+import util from '../../utils/util.js'
+import globalStateManager from '../../utils/global-state-manager.js'
+
 Page({
 
   /**
@@ -6,7 +9,11 @@ Page({
    */
   data: {
     footerHeight: 0,
-    version: ""
+    version: "",
+    mockCount: 0,
+    showMock: false,
+    isMock: true,
+    apiUrl: ""
   },
 
   /**
@@ -14,7 +21,10 @@ Page({
    */
   onLoad(options) {
     const app = getApp()
-    this.setData({version: app.globalData.version})
+    this.setData({
+      version: app.globalData.version,
+      apiUrl: app.globalData.apiUrl
+    })
   },
 
   /**
@@ -28,7 +38,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({
+      isLogin: util.isLogin()
+    })
   },
 
   /**
@@ -64,5 +76,58 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  onClickMock() {
+    this.data.mockCount++
+    if (this.data.mockCount > 10) {
+      this.setData({
+        isMock: false,
+        showMock: true
+      });
+      globalStateManager.toggleMockMode()
+    }
+  },
+
+  /**
+   * 点击退出登录按钮
+   */
+  onClickLogout() {
+    const that = this;
+    wx.showModal({
+      title: '提示',
+      content: '确认退出？',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          that.removeUserInfo()
+          that.successRedirect()
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+
+  /**
+   * 删除用户信息
+   */
+  removeUserInfo() {
+    wx.removeStorageSync('user')
+    wx.removeStorageSync('token')
+  },
+
+  /**
+   * 退出登录成功后跳转
+   */
+  successRedirect() {
+    let pages = getCurrentPages()
+    const num = pages.filter(item => item.route === 'pages/my-setting/my-setting').length
+    setTimeout(() => {
+      wx.navigateBack({
+        delta: num
+      })
+    }, 1000)
+    return
   },
 })

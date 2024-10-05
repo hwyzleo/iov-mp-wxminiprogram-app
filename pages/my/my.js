@@ -1,4 +1,5 @@
 // pages/my/my.js
+import util from '../../utils/util.js'
 
 Page({
 
@@ -6,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: null
   },
 
   /**
@@ -27,7 +28,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.setData({
+      isLogin: util.isLogin(),
+      userInfo: util.getUserInfo()
+    })
   },
 
   /**
@@ -73,4 +77,13 @@ Page({
       url: '/pages/my-setting/my-setting',
     })
   },
+
+  /**
+   * 点击登录注册按钮
+   */
+  onClickLogin() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+  }
 })

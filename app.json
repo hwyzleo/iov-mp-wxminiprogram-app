@@ -5,7 +5,8 @@
     "pages/vehicle/vehicle",
     "pages/mall/mall",
     "pages/my/my",
-    "pages/my-setting/my-setting"
+    "pages/my-setting/my-setting",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
